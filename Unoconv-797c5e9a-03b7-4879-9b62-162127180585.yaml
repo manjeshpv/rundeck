@@ -1,0 +1,15 @@
+- description: ''
+  executionEnabled: true
+  id: 797c5e9a-03b7-4879-9b62-162127180585
+  loglevel: INFO
+  name: Unoconv
+  nodeFilterEditable: false
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - description: List
+      exec: ls
+    keepgoing: false
+    strategy: node-first
+  uuid: 797c5e9a-03b7-4879-9b62-162127180585
+
