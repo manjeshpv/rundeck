@@ -1,0 +1,19 @@
+- description: ''
+  executionEnabled: true
+  id: 5a6e4e5c-9fc2-43f0-b704-ca16c9778d29
+  loglevel: INFO
+  name: Check Hard Disk
+  nodeFilterEditable: false
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - description: Checking Space
+      exec: 'usage=$(df | awk ''{print $1,$5}'' | tail -n +2 | tr -d ''%''); echo
+        "$usage" | while read FS PERCENT; do [ "$PERCENT" -ge "90" ] && curl -X POST
+        --data-urlencode "payload={\"text\": \"<!channel> \`$FS\` is running out of
+        space \`${PERCENT}%\` on \`$dest\` on $(date)\", \"username\": \"yeda\", \"icon_emoji\":
+        \":robot_face:\"}" https://hooks.slack.com/services/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; '
+    keepgoing: false
+    strategy: node-first
+  uuid: 5a6e4e5c-9fc2-43f0-b704-ca16c9778d29
+
