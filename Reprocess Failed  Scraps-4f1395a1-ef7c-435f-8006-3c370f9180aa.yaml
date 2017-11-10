@@ -1,0 +1,15 @@
+- description: ''
+  executionEnabled: true
+  id: 4f1395a1-ef7c-435f-8006-3c370f9180aa
+  loglevel: INFO
+  name: Reprocess Failed  Scraps
+  nodeFilterEditable: false
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - description: Listing Files
+      exec: ls
+    keepgoing: false
+    strategy: node-first
+  uuid: 4f1395a1-ef7c-435f-8006-3c370f9180aa
+
